@@ -37,7 +37,7 @@ const WeatherApp = () => {
         onChange={e => setCityName(e.target.value)}
         placeholder="Enter city name"
       />
-      <button className='btn btn-primary' onClick={fetchWeatherData}>Search</button>
+      <button className='btn btn-primary' onClick={fetchWeatherData}>Add</button>
       </div>
       <WeatherInfo weatherData={weatherData} />
       {error && <div>{error}</div>}

@@ -1,11 +1,11 @@
 const WeatherInfo = ({ weatherData }) => {
   if (!weatherData) {
-    return <div className="m-5 text-center">No data available</div>;
+    return <div className="m-5 text-center">Add cities to view their wheater.</div>;
   }
 
   const { location, current, forecast} = weatherData;
   const { name, country } = location;
-  const { temp_c, condition, feelslike_c, wind_kph, cloud, last_updated, uv, vis_km, is_day} = current;
+  const { temp_c, condition, feelslike_c, wind_kph, cloud, last_updated, uv, vis_km, is_day, humidity} = current;
   const {forecastday} = forecast;
 
   function isDay(){
@@ -15,6 +15,21 @@ const WeatherInfo = ({ weatherData }) => {
     else{
       return "Night"
     }
+    }
+
+    function hours(time){
+      let hr = []
+      for(let i=time;i<24;i++){
+        hr[i] = (
+      <div className="hour">
+        {i>10 ? <div className="sval">{i}:00</div> : <div className="sval">0{i}:00</div>}
+      <img src={forecastday[0].hour[i].condition.icon} alt=' ' className="simg" />
+      <div className="h-temp">{forecastday[0].hour[i].temp_c} °C</div>
+      <div className="shead">{forecastday[0].hour[i].condition.text}</div>
+      </div>
+        )
+      }
+      return hr
     }
 
   return (
@@ -29,6 +44,13 @@ const WeatherInfo = ({ weatherData }) => {
         <img src={condition.icon} alt=' ' className="icn"/>
         </div>
       </div>
+
+
+      <div className="d-flex h">
+        {hours(min_hour(last_updated))}
+      </div>
+
+
       <div className="scont">
       <div className="text-right">Last Updated: <span className="font-weight-heavy">{lastU(last_updated)}</span></div>
 
@@ -43,7 +65,7 @@ const WeatherInfo = ({ weatherData }) => {
         </div>
 
         <div className="d-flex small">
-        <div className="b"><div className="shead">Humidity</div><div className="sval">{forecastday[0].day.avghumidity} %</div></div>
+        <div className="b"><div className="shead">Humidity</div><div className="sval">{humidity} %</div></div>
         <div className="b"><div className="shead">Visibilty</div><div className="sval">{vis_km} km</div></div>
         </div>
 
@@ -54,7 +76,7 @@ const WeatherInfo = ({ weatherData }) => {
 
       {/* <div>Time of the Day</div><div>{isDay()}</div> */}
       </div>
-    {/* <pre>{JSON.stringify(weatherData, null, 2)}</pre> */}
+    {/* <pre className="text-white">{JSON.stringify(weatherData, null, 2)}</pre> */}
     </>
   );
 };
@@ -67,6 +89,16 @@ function lastU(last_updated){
    last[i]= last_updated[i]
   }
   return last
+}
+function min_hour(last_updated){
+  let last = []
+  for(let i=11;i<=12;i++)
+  {
+    last[i] = last_updated[i]
+  }
+  const concatenatedString = last.join("");
+const resultInteger = parseInt(concatenatedString)
+return resultInteger
 }
 
 export default WeatherInfo;
