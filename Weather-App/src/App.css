@@ -17,6 +17,18 @@ z-index: -1;
     margin: 30px auto;
     max-width: 1000px;
 }
+.del-div{
+    position: relative;
+}
+.btn.btn-danger{
+    position: absolute;
+    right: 95px;
+    top: 40px;
+    font-size: 20px;
+    padding: 0 8px 2px 8px;
+    border-radius: 50%;
+    text-align: center;
+}
 .tcont{
     padding: 0 50px;
 }
@@ -64,7 +76,7 @@ input:focus{
 }
 .sbar{
     display: flex;
-    margin: 0 auto;
+    margin: 30px auto 0 auto;
     padding: 5px;
     width: 553px;
     background: #202b3b;
@@ -149,6 +161,9 @@ input:focus{
     .scont{
         padding: 10px;
         margin: 20px 30px;
+    }
+    .btn.btn-danger{
+        right: 30px;
     }
     @media only screen and (max-width: 393px){
         .d-flex.temp{

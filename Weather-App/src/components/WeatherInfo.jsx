@@ -19,7 +19,7 @@ const WeatherInfo = ({ weatherData }) => {
 
     function hours(time){
       let hr = []
-      for(let i=time;i<24;i++){
+      for(let i=time+1;i<24;i++){
         hr[i] = (
       <div className="hour">
         {i>10 ? <div className="sval">{i}:00</div> : <div className="sval">0{i}:00</div>}
