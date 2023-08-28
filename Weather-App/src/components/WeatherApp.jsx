@@ -21,7 +21,7 @@ if (citiesFromLocalStorage) {
 
   if (cities[0] && !cityName) {
 
-    const apiUrl = `${baseUrl}?key=${apiKey}&q=${cities[0]}&aqi=no`;
+    const apiUrl = `${baseUrl}?key=${apiKey}&q=${cities[0]}&days=3&aqi=no`;
 
     fetch(apiUrl)
       .then(response => response.json())

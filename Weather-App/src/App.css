@@ -5,6 +5,39 @@ body{
     background: #0b131e;
     color: var(--color-);
 }
+.modal{
+    height: 100%;
+    width: 100%;
+    display:none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+.modal-content{
+    max-width: 1000px;
+    max-height: 450px;
+    padding: 10px 30px;
+    background: #0b131e;
+    color: #9399a2;
+    border-radius: 20px;
+}
+.close {
+    color: #868686;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.hour1{
+    display: none;
+}
+.hour2{
+    display: none;
+}
 .back-img{
 position: fixed;
 width: 100%;
@@ -46,6 +79,15 @@ z-index: -1;
     background: #202b3b;
     color: #9399a2;
     border-radius: 20px;
+}
+.day{
+    text-align: center;
+    min-width: 150px;
+    padding: 20px;
+    background: #202b3b;
+    color: #9399a2;
+    border-radius: 20px;
+    cursor: pointer;
 }
 .simg{
     width: 100px;
@@ -144,6 +186,11 @@ input:focus{
   @media only screen and (max-width: 723px){
     input{
         width: 200px;
+    }
+    .modal-content{
+        padding: 10px 0;
+        margin-left: 30px;
+        margin-right: 30px;
     }
     .sbar{
         width: 250px;
