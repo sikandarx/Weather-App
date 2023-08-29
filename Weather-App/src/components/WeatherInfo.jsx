@@ -44,11 +44,11 @@ const WeatherInfo = ({ weatherData }) => {
       <div className="modal-content">
             <span className="close">&times;</span>
             <div className="hour1" id="h1">
-            <h3>{dt(forecastday[1].date)}:</h3>
+            <h3 className="ml4">{dt(forecastday[1].date)}:</h3>
             <div className="d-flex h">{fhours(1)}</div>
             </div>
             <div className="hour2" id="h2">
-            <h3>{dt(forecastday[2].date)}:</h3>
+            <h3 className="ml4">{dt(forecastday[2].date)}:</h3>
             <div className="d-flex h">{fhours(2)}</div>
             </div>
       </div>
@@ -59,7 +59,7 @@ const WeatherInfo = ({ weatherData }) => {
         <div className="d-flex temp">
         <div><div className="temprature">{temp_c}°C</div>
         <div className="temp-line">{condition.text}</div>
-        <div className="rain">{cloud}% chance of rain</div></div>
+        <div className="rain">{cloud}% clouds in the sky</div></div>
         <img src={condition.icon} alt=' ' className="icn"/>
         </div>
       </div>
@@ -69,7 +69,7 @@ const WeatherInfo = ({ weatherData }) => {
         {hours(min_hour(last_updated))}
       </div>
 
-      <div className="d-flex h">
+      <div className="d-flex h d">
         <div className="day" onClick={() => perDay(1)}>
           <h3>{dt(forecastday[1].date)}</h3>
         <img src={forecastday[1].day.condition.icon} alt=' ' className="simg" />
@@ -109,7 +109,7 @@ const WeatherInfo = ({ weatherData }) => {
         </div>
         
       </div>
-    <pre className="text-white">{JSON.stringify(weatherData, null, 2)}</pre>
+    {/* <pre className="text-white">{JSON.stringify(weatherData, null, 2)}</pre> */}
     </>
   );
 };
