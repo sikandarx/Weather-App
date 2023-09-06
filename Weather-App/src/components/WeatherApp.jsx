@@ -24,7 +24,7 @@ if (citiesFromLocalStorage) {
   cities = citiesFromLocalStorage
 };
 
-  const apiKey = 'b81396097959448ca09125916231708';
+  const apiKey = '205603f624374e61880135126233108';
   const baseUrl = 'https://api.weatherapi.com/v1/forecast.json';
 
   function dele(){
@@ -93,7 +93,7 @@ function del(){
 
   return (
     <>
-    <div className='sbar'>
+    <div className={citiesFromLocalStorage == null ? "sbar" : "ssbar"}>
       <input
         type="text"
         value={cityName}

@@ -5,6 +5,10 @@ body{
     background: #0b131e;
     color: var(--color-);
 }
+.d-flex.main{
+    flex-direction: column;
+    justify-content: center;
+}
 .modal{
     height: 100%;
     width: 100%;
@@ -66,7 +70,7 @@ z-index: -1;
     padding: 0 50px;
 }
 .d-flex.h{
-    gap: 15px;
+    gap: 10px;
     margin: 30px 0;
     overflow-y: auto;
     scrollbar-width: thin; 
@@ -78,8 +82,8 @@ z-index: -1;
 }
 .hour{
     text-align: center;
-    min-width: 180px;
-    max-width: 180px;
+    min-width: 130px;
+    max-width: 130px;
     padding: 20px;
     background: #202b3b;
     color: #9399a2;
@@ -87,8 +91,8 @@ z-index: -1;
 }
 .day{
     text-align: center;
-    min-width: 180px;
-    max-width: 180px;
+    min-width: 130px;
+    max-width: 130px;
     padding: 20px;
     background: #202b3b;
     color: #9399a2;
@@ -96,10 +100,10 @@ z-index: -1;
     cursor: pointer;
 }
 .simg{
-    width: 100px;
+    width: 60px;
 }
 .h-temp{
-    font-size: 25px;
+    font-size: 20px;
 }
 .scont{
     padding: 20px;
@@ -130,6 +134,14 @@ input:focus{
     background: #202b3b;
     border-radius: 10px;
 }
+.ssbar{
+    display: flex;
+    margin: 30px auto 0 auto;
+    padding: 5px;
+    width: 553px;
+    background: #202b3b;
+    border-radius: 10px;
+}
 .city{
     font-size: 40px;
     font-weight: 700;
@@ -140,7 +152,7 @@ input:focus{
     margin-bottom: 30px;
 }
 .temprature{
-    font-size: 70px;
+    font-size: 65px;
     font-weight: 200;
 }
 .temp-line{
@@ -151,8 +163,10 @@ input:focus{
     font-weight: 100;
 }
 .icn{
-    width: 150px;
-    height: 150px;
+    display: block;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
 }
 .d-flex.temp{
     justify-content:space-between;
@@ -164,9 +178,20 @@ input:focus{
 .shead{
     font-size: 14px;
 }
+.sshead{
+    color: #9399a2;
+}
 .sval{
+    font-size: 25px;
+    font-weight: 800;
+}
+.ssval{
     font-size: 35px;
     font-weight: 800;
+}
+.sssval{
+    font-size: 40px;
+    font-weight: 900;
 }
 .b{
     width: 200px;
@@ -221,6 +246,9 @@ input:focus{
     .sbar{
         width: 250px;
     }
+    .ssbar{
+        width: 270px;
+    }
     .ml4{
         margin-left: 30px;
     }
@@ -240,6 +268,12 @@ input:focus{
     }
     .btn.btn-danger{
         right: 30px;
+    }
+    .sssval{
+        text-align: center;
+    }
+    .sshead{
+        text-align: center;
     }
     @media only screen and (max-width: 393px){
         .d-flex.temp{
